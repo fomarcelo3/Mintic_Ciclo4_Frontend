@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/usuario/funciones.js"></script>
     <script src="js/usuario/registrar.js"></script>
+    <script src="js/usuario/login.js"></script>
 
 </head>
 
@@ -23,6 +24,7 @@
         <div class="mx-auto">
           <h1>Iniciar sesión</h1>
         </div>
+        <div id="mensajesLogin"></div>
         <form>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label" required>Email</label>
@@ -34,7 +36,7 @@
             <input type="password" class="form-control" id="passwordLogin" required>
           </div>
 
-          <button type="submit" class="btn btn-primary">Ingresar</button>
+          <button onclick="ingresar();" class="btn btn-primary">Ingresar</button>
 
           <div class="mb-3">
             <a href="#" onclick="toogleLogin()"; class="link-primary">Crear una nueva cuenta aqui.</a>
@@ -64,15 +66,15 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" required>
+            <input type="password" class="form-control" id="exampleInputPassword1" required minlength="6">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Confirmar Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" required>
+            <input type="password" class="form-control" id="exampleInputPassword2" required minlength="6">
           </div>
 
-          <button onclick="registrar();" class="btn btn-primary">Ingresar</button>
+          <button onclick="registrar();" class="btn btn-primary">Crear cuenta</button>
 
           <div class="mb-3">
             <a href="#" onclick="toogleLogin()"; class="link-primary">¿Ya tienes cuenta?, Inicia sesión aqui</a>
@@ -93,6 +95,7 @@
 
         if (login_signUp.style.display == 'inline') {
           login_signUp.style.display = 'none';
+          limpiarCampos();
           login.style.display = 'inline';
         } else {
           login_signUp.style.display = 'inline';

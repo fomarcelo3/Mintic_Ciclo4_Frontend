@@ -34,10 +34,16 @@ function registrar() {
             // la respuesta es pasada como argumento a la función
             success: function (respuesta) {
                 //escribe en la consola del desarrollador para efectos de depuración
-                console.log(respuesta);
+                console.log(respuesta.id);
+                if(respuesta.id == null){
+
+                    $("#mensajes").html("El correo ingresado ya existe asociado a una cuenta.");
+                }else{
+                    $("#mensajes").html("Cuenta creada de forma correcta.");
+                    limpiarCampos();
+                }
                 $("#mensajes").show(1000);
-                $("#mensajes").html("Registro insertado con exito!");
-                limpiarCampos();
+                
                 $("#mensajes").hide(5000);
                 
             },
