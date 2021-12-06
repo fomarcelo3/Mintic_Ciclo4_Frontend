@@ -23,7 +23,7 @@ function ingresar() {
             // la respuesta es pasada como argumento a la función
             success: function (respuesta) {
                 //escribe en la consola del desarrollador para efectos de depuración
-                console.log(respuesta.name);
+                console.log(respuesta);
                 if(respuesta.id == null){
                     $("#mensajesLogin").show(1000);
                     $("#mensajesLogin").html("Los datos ingresados son incorrectos.");
@@ -43,7 +43,7 @@ function ingresar() {
             error: function (xhr, status) {
                 $("#mensajesLogin").show(1000);
                 $("#mensajesLogin").html("Error peticion POST..." + status );
-                //$("#mensajes").hide(1000);
+                $("#mensajesLogin").hide(1000);
             }
         });
     
