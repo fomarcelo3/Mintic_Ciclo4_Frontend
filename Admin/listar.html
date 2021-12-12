@@ -32,12 +32,11 @@
               <a href="agregar.html"><span class="mr-3"><i class="bi bi-person-plus"></i></span> Agregar usuario</a>
           </li>
           <li>
-              <a href="Products/listarProductos.html"><span class="mr-3"><i class="bi bi-list-ol"></i></span> Lista de productos</a>
+            <a href="Products/listarProductos.html"><span class="mr-3"><i class="bi bi-list-ol"></i></span> Lista de productos</a>
           </li>
           <li>
-              <a href="Products/agregarProducto.html"><span class="mr-3"><i class="bi bi-plus-circle"></i></span> Agregar producto</a>
+            <a href="Products/agregarProducto.html"><span class="mr-3"><i class="bi bi-plus-circle"></i></span> Agregar producto</a>
           </li>
-          
         
         </ul>
 
@@ -45,14 +44,21 @@
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-        <h2 class="mb-4">Bienvenidos a su tienda</h2>
+        <h2 class="mb-4">Listado de usuarios</h2>
+        <!--aqui se actualizara el listado -->
+        <a class="btn btn-success mb-3" href="agregar.html" role="button"><span><i class="bi bi-plus"></i></span>Agregar usuario</a>  
+      <div id="listado"></div>
         
       </div>
 		</div>
 
-    <script src="../js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script src="../../js/jquery.min.js"></script> -->
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js"></script>    
+    <script src="../js/admin/listar.js"></script>
+    <script src="../js/admin/eliminar.js"></script>
   </body>
 </html>

@@ -12,93 +12,85 @@ function validaesVacio(dato){
 function validar(){
     //obtiene valores
     // let id = $("#id").val();
-    let  identification= $("#txtId").val();
-    let name = $("#txtName").val();
-    let address = $("#txtAddress").val();
-    let cellPhone = $("#txtCellphone").val();
-    let email = $("#txtEmail").val();
-    let password = $("#txtPassword").val();
-    let zone = $("#txtZona").val();
-    let type = $("#txtType").val();
+    let reference= $("#txtReference").val();
+    let category= $("#txtCategory").val();
+    let size= $("#txtSize").val();
+    let description= $("#txtDescription").val();
+    let availability= $("#txtAvailability").val();
+    let price= $("#txtPrice").val();
+    let quantity= $("#txtQuantity").val();
+    let photography= $("#txtPhotography").val();
+
     let errores="";
     $("#mensajes").html("");
     $("#mensajes").css("color", "red");
 
     //valida que los campos no sean vacios
-    if( validaesVacio(identification)) {
-        errores="Identificacion vacio<br>";
-        $("#txtId").val("");
+    if( validaesVacio(reference)) {
+        errores="Referencia producto vacio<br>";
+        $("#txtReference").val("");
         $("#mensajes").html(errores);
         $("#mensajes").show(200);
-        $("#txtId").focus();
+        $("#txtReference").focus();
         // $("#mensajes").hide(2000);
         return false;
-    }else if( validaesVacio(name)) {
-        errores="Nombre vacio<br>";
-        $("#txtName").val("");
+    }else if( validaesVacio(description)) {
+        errores="Descripcion de producto vacio<br>";
+        $("#txtDescription").val("");
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
-        $("#txtName").focus();
+        $("#txtDescription").focus();
         //$("#mensajes").hide(2000);
         return false;
-    }else if( validaesVacio(address)) {
-        errores="Dirección vacio<br>";
-        $("#txtAddress").val("");
+    }else if( validaesVacio(category)) {
+        errores="Indique categoria del producto<br>";
+        $("#txtCategory").val("");
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
-        $("#txtAddress").focus();
+        $("#txtCategory").focus();
        // $("#mensajes").hide(2000);
         return false;
-    }else if( validaesVacio(cellPhone)) {
-        errores="Telefono vacio<br>";
-        $("#txtCellphone").val("");
+    }else if( validaesVacio(size)) {
+        errores="Talla vacio<br>";
+        $("#txtSize").val("");
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
-        $("#txtCellphone").focus();
+        $("#txtSize").focus();
        // $("#mensajes").hide(2000);
         return false;
-    }else if( validaesVacio(email)) {
-        errores="Email vacio<br>";
+    }else if( validaesVacio(availability)) {
+        errores="Seleccione disponibilidad del producto<br>";
         $("#txtEmail").val("");
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#txtEmail").focus();
        // $("#mensajes").hide(2000);
         return false;
-    }else if( validaesVacio(password) ) {
-        errores="Password vacio<br>";
-        $("#txtPassword").val("");
+    }else if( validaesVacio(price) ) {
+        errores="Precio vacio<br>";
+        $("#txtPrice").val("");
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
-        $("#txtPassword").focus();
+        $("#txtPrice").focus();
         //$("#mensajes").hide(2000);
         return false;
-    }else if( password.length < 6  ) {
-        errores="Ingrese al menos 6 caracteres para contraseña<br>";
-        $("#txtPassword").val("");
+    }else if( validaesVacio(quantity) ) {
+        errores="Cantidad vacio<br>";
+        $("#txtQuantity").val("");
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
-        $("#txtPassword").focus();
-        //$("#mensajes").hide(5000);
+        $("#txtQuantity").focus();
+       // $("#mensajes").hide(2000);
         return false;
-    }else if( validaesVacio(zone) ) {
-        errores="Zona vacio<br>";
-        $("#txtZona").val("");
+    }else if( validaesVacio(photography) ) {
+        errores="fotografia vacio<br>";
+        $("#txtPhotography").val("");
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
-        $("#txtZona").focus();
+        $("#txtPhotography").focus();
        // $("#mensajes").hide(2000);
         return false;
     }
-    // else if( password != password2  ) {
-    //     errores="Las contraseñas no coinciden.<br>";
-    //     $("#exampleInputPassword2").val("");
-    //     $("#mensajes").html(errores);
-    //     $("#mensajes").show(500);
-    //     $("#exampleInputPassword2").focus();
-    //     $("#mensajes").hide(3000);
-    //     return false;
-    // }
     else{
         $("#mensajes").html("");
         $("#mensajes").hide(500);

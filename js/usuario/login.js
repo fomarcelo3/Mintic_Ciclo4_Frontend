@@ -9,7 +9,7 @@ function ingresar() {
     
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
-            url: "http://localhost:8080/api/user/" + email + "/"+ password,
+            url: "http://144.22.227.164:8080/api/user/" + email + "/"+ password,
     
             // especifica el tipo de petición http: POST, GET, PUT, DELETE
             type: 'GET',
@@ -29,7 +29,14 @@ function ingresar() {
                     $("#mensajesLogin").html("Los datos ingresados son incorrectos.");
                 }else{
                     limpiarCamposLogin();
-                    location.href = "bienvenido.html";
+                    if(respuesta.type === "COORD"){
+                        location.href = "Users/coord/home.html";
+                    }else if(respuesta.type === "ASESOR"){
+                        location.href = "Users/asesor/home.html";
+                    }else{
+
+                        location.href = "Admin/home.html";
+                    }
                 }
                 
                 

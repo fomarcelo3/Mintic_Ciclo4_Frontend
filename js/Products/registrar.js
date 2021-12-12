@@ -4,14 +4,14 @@ function registrar() {
 
     //crea un objeto javascript
     let datos={
-        identification: $("#txtId").val(),
-        name: $("#txtName").val(),
-        address: $("#txtAddress").val(),
-        cellPhone: $("#txtCellphone").val(),
-        email: $("#txtEmail").val(),
-        password: $("#txtPassword").val(),
-        zone: $("#txtZona").val(),
-        type: $("#txtType").val()
+        reference: $("#txtReference").val(),
+        category: $("#txtCategory").val(),
+        size: $("#txtSize").val(),
+        description: $("#txtDescription").val(),
+        availability: $("#txtAvailability").val(),
+        price: $("#txtPrice").val(),
+        quantity: $("#txtQuantity").val(),
+        photography: $("#txtPhotography").val()
     }
 
     //convierte el objeto javascript a json antes de agregarlo a los datos de la petición
@@ -20,7 +20,7 @@ function registrar() {
     if (validar()){
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
-            url: "http://144.22.227.164:8080/api/user/new",
+            url: "http://144.22.227.164:8080/api/clothe/new",
             
             // la información a enviar
             // (también es posible utilizar una cadena de datos)
@@ -40,14 +40,11 @@ function registrar() {
             success: function (respuesta) {
                 //escribe en la consola del desarrollador para efectos de depuración
                 console.log(respuesta.id);
-                if(respuesta.id == null){
-                    $("#mensajes").css("color", "red");
-                    $("#mensajes").html("El correo ingresado ya existe asociado a una cuenta.");
-                }else{
-                    $("#mensajes").css("color", "green");
-                    $("#mensajes").html("Cuenta creada de forma correcta.");
-                    limpiarCampos();
-                }
+                
+                $("#mensajes").css("color", "green");
+                $("#mensajes").html("Producto agregado de forma correcta.");
+                limpiarCampos();
+                
                 $("#mensajes").show(1000);
                 
                 $("#mensajes").hide(5000);
@@ -68,13 +65,13 @@ function registrar() {
 }
 
 function limpiarCampos(){
-    $("#txtId").val("");
-    $("#txtName").val("");
-    $("#txtAddress").val("");
-    $("#txtCellphone").val("");
-    $("#txtEmail").val("");
-    $("#txtPassword").val("");
-    $("#txtZona").val("");
-    $("#txtType").val("");
+    $("#txtReference").val("");
+    $("#txtCategory").val("");
+    $("#txtSize").val("");
+    $("#txtDescription").val("");
+    $("#txtAvailability").val("");
+    $("#txtPrice").val("");
+    $("#txtQuantity").val("");
+    $("#txtPhotography").val("");
 }
 

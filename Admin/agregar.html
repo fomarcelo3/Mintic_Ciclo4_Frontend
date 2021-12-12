@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Alto tumerque</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+        <div class="d-flex flex-column">
+            <img src="../images/logo.png" alt="" sizes="" srcset="">
+	    	    <h1><a href="home.html" class="logo">Inicio</a></h1>
+        </div>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="listar.html"><span class="mr-3"><i class="bi bi-list"></i></span> Lista de usuarios</a>
+          </li>
+          <li>
+              <a href="agregar.html"><span class="mr-3"><i class="bi bi-person-plus"></i></span> Agregar usuario</a>
+          </li>
+          <li>
+            <a href="Products/listarProductos.html"><span class="mr-3"><i class="bi bi-list-ol"></i></span> Lista de productos</a>
+          </li>
+          <li>
+            <a href="Products/agregarProducto.html"><span class="mr-3"><i class="bi bi-plus-circle"></i></span> Agregar producto</a>
+          </li>
+          
+        
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Nuevo usuario</h2>
+        <div id="mensajes"></div>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-12 col-lg-13 col-md-12 col-12 text-center">
+                    
+                    <div>
+                        <form class="form-card" onsubmit="event.preventDefault()">
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                    <label class="form-control-label px-3">Identificación<span class="text-danger"> *</span></label> 
+                                    <input type="number" id="txtId" name="txtId" placeholder="Ingrese su número de identificación"> 
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                    <label class="form-control-label px-3">Nombre<span class="text-danger"> *</span></label> 
+                                    <input type="text" id="txtName" name="txtName" placeholder="Ingrese nombres y apellidos"> 
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                    <label class="form-control-label px-3">Dirección<span class="text-danger"> *</span></label>
+                                    <input type="text" id="txtAddress" name="txtAddress" placeholder="Ingrese dirección de residencia"> 
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                    <label class="form-control-label px-3">Telefono<span class="text-danger"> *</span></label> 
+                                    <input type="text" id="txtCellphone" name="txtCellphone" placeholder="Ingrese número fijo o celular"> 
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                    <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> 
+                                    <input type="email" id="txtEmail" name="txtEmail" placeholder="Ingrese correo electronico"> 
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                    <label class="form-control-label px-3">Contraseña<span class="text-danger"> *</span></label> 
+                                    <input type="password" id="txtPassword" name="txtPassword" placeholder="Ingrese al menos 6 caracteres "> 
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                    <label class="form-control-label px-3">Tipo usuario<span class="text-danger"> *</span></label> 
+                                    <select id="txtType" name="txtType" class="form-control border" required="required" data-error="Please specify your need.">
+                                        <option value="" selected disabled>--Seleccione tipo usuario--</option>
+                                        <option value="ADMIN">Administrador</option>
+                                        <option value="COORD">Coordinador</option>
+                                        <option value="ASESOR">Asesor</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                    <label class="form-control-label px-3">Zona<span class="text-danger"> *</span></label> 
+                                    <input type="text" id="txtZona" name="txtZona" placeholder="Ingrese zona a la que pertenece"> 
+                                </div>
+                            </div>
+                            
+                            <div class="row justify-content-end">
+                                <div class="form-group col-sm-6"> 
+                                    <button type="submit" class="btn-block btn-primary" onclick="registrar();">Agregar usuario</button> 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         
+        
+      </div>
+		</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="../js/jquery.min.js"></script> -->
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/usuario/funciones.js"></script>
+    <script src="../js/usuario/registrar.js"></script>
+  </body>
+</html>
