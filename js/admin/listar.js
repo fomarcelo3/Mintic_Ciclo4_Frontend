@@ -12,7 +12,8 @@ $(document).ready(function () {
 function listar() {
     $.ajax({
         // la URL para la petición (url: "url al recurso o endpoint")
-        url: "http://144.22.227.164:8080/api/user/all",
+        //url: "http://144.22.227.164:8080/api/user/all",
+        url: "http://localhost:8080/api/user/all",
         
         // la información a enviar
         // (también es posible utilizar una cadena de datos)

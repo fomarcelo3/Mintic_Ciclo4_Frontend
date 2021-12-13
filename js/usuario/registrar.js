@@ -20,7 +20,8 @@ function registrar() {
     if (validar()){
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
-            url: "http://144.22.227.164:8080/api/user/new",
+            // url: "http://144.22.227.164:8080/api/user/new",
+            url: "http://localhost:8080/api/user/new",
             
             // la información a enviar
             // (también es posible utilizar una cadena de datos)

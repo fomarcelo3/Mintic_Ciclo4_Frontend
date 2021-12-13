@@ -14,7 +14,8 @@ function borrarRegistro(id){
             let datosPeticion = JSON.stringify(datos);
             if (OK) {
                 $.ajax({
-                    url:"http://144.22.227.164:8080/api/user/" + id,
+                    //url:"http://144.22.227.164:8080/api/user/" + id,
+                    url:"http://localhost:8080/api/user/" + id,
                     type: 'DELETE',
                     contentType:"application/JSON",
                     success : function (res){

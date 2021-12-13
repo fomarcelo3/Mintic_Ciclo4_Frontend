@@ -9,7 +9,8 @@ function ingresar() {
     
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
-            url: "http://144.22.227.164:8080/api/user/" + email + "/"+ password,
+            // url: "http://144.22.227.164:8080/api/user/" + email + "/"+ password,
+            url: "http://localhost:8080/api/user/" + email + "/"+ password,
     
             // especifica el tipo de petición http: POST, GET, PUT, DELETE
             type: 'GET',
@@ -29,6 +30,24 @@ function ingresar() {
                     $("#mensajesLogin").html("Los datos ingresados son incorrectos.");
                 }else{
                     limpiarCamposLogin();
+                    //crea objeto javascript que contiene la información del usuario
+                    let userJS = {
+                        id: respuesta.id,
+                        identification: respuesta.identification,
+                        name: respuesta.name,
+                        address: respuesta.address,
+                        cellPhone: respuesta.cellPhone,
+                        email: respuesta.email,
+                        password: respuesta.password,
+                        zone: respuesta.zone,
+                        type: respuesta.type
+                    };
+
+                    //transforma el objeto javascript a json antes de guardarlo en el sessionStorage
+                    let user = JSON.stringify(userJS);
+
+                    //almacena el usuario en el sessionStorage, para hacerlo disponible a las otras páginas
+                    sessionStorage.setItem("user", user);
                     if(respuesta.type === "COORD"){
                         location.href = "Users/coord/home.html";
                     }else if(respuesta.type === "ASESOR"){

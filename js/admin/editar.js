@@ -1,4 +1,19 @@
 $(document).ready(function () {
+
+    let user = sessionStorage.getItem("user");
+    let userJS = JSON.parse(user);
+    let typeUser;
+
+    if (userJS.type=='ASESOR')
+        typeUser="ASESOR";
+    else if (userJS.type=='COORD')
+        typeUser="COORDINADOR";
+    else
+        typeUser="ADMINISTRADOR";
+
+
+    $("#userName").html(userJS.name);
+    $("#userType").html(typeUser);
     
     let URLactual = window.location.href;
     const parametro = URLactual.split("?");
@@ -9,7 +24,8 @@ $(document).ready(function () {
 
 function seleccionar(llaveRegistro){
     $.ajax({
-        url: "http://144.22.227.164:8080/api/user/" + llaveRegistro,
+        // url: "http://144.22.227.164:8080/api/user/" + llaveRegistro,
+        url: "http://localhost:8080/api/user/" + llaveRegistro,
 
         type: 'GET',
 
@@ -73,7 +89,8 @@ function editarRegistro(){
         if (validarEditar()){
             $.ajax({
                 // la URL para la petición (url: "url al recurso o endpoint")
-                url: "http://144.22.227.164:8080/api/user/update",
+                //url: "http://144.22.227.164:8080/api/user/update",
+                url: "http://localhost:8080/api/user/update",
                 
                 // la información a enviar
                 // (también es posible utilizar una cadena de datos)
